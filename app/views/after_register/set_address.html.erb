@@ -19,7 +19,7 @@
 </div>
 <div class="max-w-md mx-auto">
 
-    <h1 class="text-3xl text-slate-800 font-bold mb-6"><%= t("fiscal_address") %> ✨</h1>
+    <h1 class="text-3xl text-slate-800 font-bold mb-6"><%= ("fiscal_address") %> ✨</h1>
 
     <%= form_for(@user_profile, url: wizard_path, method: 'put' ) do |f| %>
         <% if f.object.errors.any? %>
@@ -36,46 +36,46 @@
         <div data-controller="select" data-select-url-value="<%= regions_path %>" data-select-param-value="country">
             <div class="my-5">
                 <%= f.label :country, class: "input-label" do %>
-                    <%= t("country") %> <%= required_field_indicator %>
+                    <%= ("country") %> <%= required_field_indicator %>
                 <% end %>
                 <%= f.collection_select :country, Country.all.sort, :alpha_2_code, :name,
-                { prompt: t("select_country"), selected: "ES" }, { data: {action: "change->select#change"}, class: "form-input w-full", required: true} %>
+                { prompt: ("select_country"), selected: "ES" }, { data: {action: "change->select#change"}, class: "form-input w-full", required: true} %>
             </div>
             <div class="my-5">
                 <%= f.label :region, class: "input-label" do %>
-                    <%= t("province") %> <%= required_field_indicator %>
+                    <%= ("province") %> <%= required_field_indicator %>
                 <% end %>
-                <%= f.select :region, [(options_for_select spanish_regions)], {prompt: t("selecciona_provincia")}, { data: { select_target: "select" }, class: "form-input w-full", required: true} %>
+                <%= f.select :region, [(options_for_select spanish_regions)], {prompt: ("selecciona_provincia")}, { data: { select_target: "select" }, class: "form-input w-full", required: true} %>
             </div>
         </div>        
         <div class="my-5">
             <%= f.label :city, class: "input-label" do %>
-                <%= t("city") %> <%= required_field_indicator %>
+                <%= ("city") %> <%= required_field_indicator %>
             <% end %>
             <%= f.text_field :city, class: "form-input w-full", required: true %>
         </div>
         <div class="my-5">
             <%= f.label :postal_code, class: "input-label" do %>
-                <%= t("postal_code") %> <%= required_field_indicator %>
+                <%= ("postal_code") %> <%= required_field_indicator %>
             <% end %>
             <%= f.text_field :postal_code, class: "form-input w-full", required: true %>
         </div>
         <div class="my-5">
             <%= f.label :street_address_1, class: "input-label" do %>
-                <%= t("street_address_1") %> <%= required_field_indicator %>
+                <%= ("street_address_1") %> <%= required_field_indicator %>
             <% end %>
             <%= f.text_field :street_address_1, class: "form-input w-full", required: true %>
         </div>
         <div class="my-5">
             <%= f.label :street_address_2, class: "input-label" do %>
-                <%= t("street_address_2") %>
+                <%= ("street_address_2") %>
             <% end %>
             <%= f.text_field :street_address_2, class: "form-input w-full" %>
         </div>
         <div class="flex items-center justify-between">
             <%= render "after_register/links" %>
             <%= f.button class: 'btn bg-indigo-600 hover:bg-indigo-700 text-white ml-auto cursor-pointer' do %>
-                <%= t("next") %> <%= heroicon "arrow-right", variant: :mini %>
+                <%= ("next") %> <%= heroicon "arrow-right", variant: :mini %>
             <% end %>
         </div>
     <% end %>

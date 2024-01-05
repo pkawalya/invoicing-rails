@@ -1,0 +1,10 @@
+<div class="task-field dynamic" data-association="task" data-controller="nested-rondo" data-nested-rondo-field-class-value="task-field">
+  <div class="my-5">
+    <%= f.input :description %>
+  </div>
+  <div class="my-5">
+    <%= f.label "Done?" %>
+    <%= f.check_box :done, as: :boolean %>
+  </div>
+  <%= link_to_remove_association "Remove Task", f, data: { action: "click->nested-rondo#removeField" } %>
+</div>

@@ -2,4 +2,4 @@
 
 Pagy::DEFAULT[:items] = 10
 
-Pagy::I18n.load({ locale: 'es' },{ locale: 'en' })
+Pagy::I18n.load({ locale: 'en' }, { locale: 'es' })

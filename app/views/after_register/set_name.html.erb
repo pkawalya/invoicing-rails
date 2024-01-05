@@ -19,9 +19,9 @@
 </div>
 <div class="max-w-md mx-auto">
   <% if @user_profile.is_freelance %>
-    <h1 class="text-3xl text-slate-800 font-bold mb-6"><%= t("personal_information") %> ✨</h1>
+    <h1 class="text-3xl text-slate-800 font-bold mb-6"><%= ("personal_information") %> ✨</h1>
   <% else %>
-    <h1 class="text-3xl text-slate-800 font-bold mb-6"><%= t("company_information") %> ✨</h1>
+    <h1 class="text-3xl text-slate-800 font-bold mb-6"><%= ("company_information") %> ✨</h1>
   <% end %>
   <%= form_for(@user_profile, url: wizard_path, method: 'put' ) do |f| %>
     <% if f.object.errors.any? %>
@@ -38,38 +38,38 @@
       <% if @user_profile.is_freelance %>
         <div class="my-5">
           <%= f.label :first_name, class: "input-label" do %>
-            <%= t("name") %> <%= required_field_indicator %>
+            <%= ("name") %> <%= required_field_indicator %>
           <% end %>
           <%= f.text_field :first_name, class: "form-input w-full", required: true, autofocus: true %>
         </div>
         <div class="my-5">
           <%= f.label :last_name, class: "input-label" do %>
-            <%= t("last_name") %> <%= required_field_indicator %>
+            <%= ("last_name") %> <%= required_field_indicator %>
           <% end %>
           <%= f.text_field :last_name, class: "form-input w-full", required: true %>
         </div>
         <div class="my-5">
           <%= f.label :gov_id, class: "input-label" do %>
-            <%= t("fiscal_identification_number") %> <%= required_field_indicator %>
+            <%= ("fiscal_identification_number") %> <%= required_field_indicator %>
           <% end %>
           <%= f.text_field :gov_id, class: "form-input w-full", required: true %>
         </div>
       <% else %>
         <div class="my-5">
           <%= f.label :company_name, class: "input-label" do %>
-            <%= t("company_name") %> <%= required_field_indicator %>
+            <%= ("company_name") %> <%= required_field_indicator %>
           <% end %>
           <%= f.text_field :company_name, class: "form-input w-full", required: true, autofocus: true %>
         </div>
         <div class="my-5">
           <%= f.label :gov_id, class: "input-label" do %>
-            <%= t("fiscal_identification_number") %> <%= required_field_indicator %>
+            <%= ("fiscal_identification_number") %> <%= required_field_indicator %>
           <% end %>
             <%= f.text_field :gov_id, class: "input", required: true %>
         </div>
         <div class="my-5">
           <%= f.label "legal_representative_information", class: "input-label" do %>
-            <%= t("legal_representative_information") %> <%= required_field_indicator %>
+            <%= ("legal_representative_information") %> <%= required_field_indicator %>
           <% end %>
           <%= f.text_field :first_name, class: "form-input w-full", placeholder: "Nombres", required: true %>
         </div>
@@ -81,7 +81,7 @@
     <div class="flex items-center justify-between">
       <%= render "after_register/links" %>
       <%= f.button class: 'btn bg-indigo-600 hover:bg-indigo-700 text-white ml-auto cursor-pointer' do %>
-          <%= t("next") %> <%= heroicon "arrow-right", variant: :mini %>
+          <%= ("next") %> <%= heroicon "arrow-right", variant: :mini %>
       <% end %>
     </div>
 

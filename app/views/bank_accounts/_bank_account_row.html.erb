@@ -1,0 +1,18 @@
+<!-- app/views/bank_accounts/_bank_account_row.html.erb -->
+<tr>
+    <td class="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap w-px">
+        <div class="flex items-center">
+            <label class="inline-flex">
+                <span class="sr-only">Select</span>
+                <input class="table-item form-checkbox" type="checkbox" @click="uncheckParent" />
+            </label>
+        </div>
+    </td>
+    <td class="px-2 first:pl-5 last:pr-5 py-3 break-words">
+        <div class="flex items-center">
+            <!-- Replace 'item_name' with the actual attribute of your BankAccount model -->
+            <div class="font-medium text-slate-800"><%= bank_account.name %></div>
+        </div>
+    </td>
+   
+</tr>

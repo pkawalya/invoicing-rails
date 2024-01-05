@@ -3,32 +3,31 @@ class ApplicationRecord < ActiveRecord::Base
   primary_abstract_class
 
   def get_regions
-    @regions = Array.new
+    @regions = []
     if new_record? || country.nil?
-      Country.alpha_2_coded("ES").subregions.each { |r| @regions << r.subregions }
+      Country.alpha_2_coded('UG').subregions.each { |r| @regions << r.subregions }
+    elsif country.count('a-zA-Z') > 2
+      Country.named(country)&.subregions&.each { |r| @regions << r.subregions }
+      @regions = @regions.reject { |c| c.empty? }
+      if @regions.empty?
+        @regions = []
+        Country.named(country)&.subregions&.each { |r| @regions << r }
+      end
     else
-      if country.count("a-zA-Z") > 2
-        Country.named(country)&.subregions&.each { |r| @regions << r.subregions }
-        @regions = @regions.reject { |c| c.empty? }
-        if @regions.empty?
-          @regions = Array.new
-          Country.named(country)&.subregions&.each { |r| @regions << r }
-        end
-      else
-        Country.alpha_2_coded(country).subregions.each { |r| @regions << r.subregions }
-        @regions = @regions.reject { |c| c.empty? }
-        if @regions.empty?
-          @regions = Array.new
-          Country.alpha_2_coded(country).subregions.each { |r| @regions << r }
-        end
+      Country.alpha_2_coded(country).subregions.each { |r| @regions << r.subregions }
+      @regions = @regions.reject { |c| c.empty? }
+      if @regions.empty?
+        @regions = []
+        Country.alpha_2_coded(country).subregions.each { |r| @regions << r }
       end
     end
     @regions.flatten.sort
   end
-  
+
   def country_code
-    return "ES" if country.nil?
-    return Country.named(country)&.alpha_2_code if country.count("a-zA-Z") > 2
+    return 'UG' if country.nil?
+    return Country.named(country)&.alpha_2_code if country.count('a-zA-Z') > 2
+
     country
   end
 end

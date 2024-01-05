@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :bank_accounts
   # root 'home#index', as: 'home_index', via: :all
   devise_for :users, controllers: { registrations: 'registrations' }
   resources :users

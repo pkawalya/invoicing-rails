@@ -7,7 +7,7 @@
             </div>
             <h2 class="text-2xl text-slate-800 font-bold mb-2"><%= t("no_encontrado") %></h2>
             <div class="mb-6"><%= t("no_encontrado_texto") %></div>
-            <%= link_to the_link, class: "btn bg-indigo-500 hover:bg-indigo-600 text-white", data: { turbo_frame: "_top" } do %>
+            <%= link_to the_link, class: "btn bg-red-500 hover:bg-red-600 text-white", data: { turbo_frame: "_top" } do %>
               <%= heroicon "arrow-uturn-left" %>
               <span class="ml-2"><%= t("limpiar_busqueda") %></span>
             <% end %>

@@ -6,7 +6,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module Facturacion
+module SifCargo
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1
@@ -21,7 +21,7 @@ module Facturacion
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #
-    config.time_zone = 'Madrid'
+    config.time_zone = 'Africa/Kampala'
     # config.eager_load_paths << Rails.root.join("extras")
 
     config.to_prepare { Devise::Mailer.layout 'mailer' }

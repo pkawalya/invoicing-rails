@@ -1,6 +1,6 @@
 <div class="mx-auto md:w-2/3 w-full">
-  <%= link_to sanitize("&larr; Regresar a ítems"), items_path, class: "back-button" %>
-  <h1 class="title"><%= t("nuevo_item") %> ✨</h1>
+  <%= link_to sanitize("&larr; All Items"), items_path, class: "back-button" %>
+  <h1 class="title"><%= ("New Item") %> ✨</h1>
 
   <%= render "form", item: @item %>
 
