@@ -21,7 +21,9 @@ es:
   siguiente: Siguiente
   anterior: Anterior
   pagadas: Pagadas
+  Pagada: Pagada
   pendientes: Pendientes
+  Pendiente: Pendiente
   por_vencer: Por vencer
   vencidas: Vencidas
   buscar_factura: Buscar factura...
@@ -47,6 +49,8 @@ es:
   items_facturar: Ítems a Facturar
   guardar_factura: Guardar Factura
   factura_creada: Factura creada exitosamente
+  factura_borrada: Factura borrada exitosamente
+  factura_editada: Factura editada exitosamente
   subtotal: Base imponible
   iva: IVA
   irpf: IRPF
